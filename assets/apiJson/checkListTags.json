@@ -1,0 +1,32 @@
+[{
+     "tagId" :1,
+    "tagName" : "xyz",
+    "status" : "yes",
+    "createdOn": "10-10-2017",
+    "updatedOn": "21-10-2017",
+    "class":"odd"
+},
+{
+     "tagId" :2,
+    "tagName" : "abc",
+    "status" : "No",
+    "createdOn": "10-10-2017",
+    "updatedOn": "21-10-2017",
+     "class":"even"
+},
+{
+     "tagId" :3,
+    "tagName" : "def",
+    "status" : "yes",
+    "createdOn": "10-10-2017",
+    "updatedOn": "21-10-2017",
+     "class":"odd"
+},
+{
+     "tagId" :4,
+    "tagName" : "ghi",
+    "status" : "No",
+    "createdOn": "10-10-2017",
+    "updatedOn": "21-10-2017",
+     "class":"even"
+}]
