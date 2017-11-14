@@ -1,0 +1,74 @@
+<app-header pageTitle="Check List"></app-header>
+<div id="main-container">
+			<div class="padding-md">
+				<div class="row">
+					<div >
+<div class="panel panel-default table-responsive">
+					
+					<div class="padding-md clearfix">
+						<div id="dataTable_wrapper" class="dataTables_wrapper" role="grid">
+              <div class="panel-heading">
+								<h5>Check List</h5>
+							</div>
+             <table class="table table-striped dataTable" id="dataTable" aria-describedby="dataTable_info">
+							<thead>
+								<tr role="row"><th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="No: activate to sort column descending" style="width: 138px;">
+                  <div class="DataTables_sort_wrapper">No </div>
+                </th>
+                <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Tag Name: activate to sort column ascending" style="width: 497px;">
+                  <div class="DataTables_sort_wrapper">Tag Name </div>
+                </th>
+                <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 152px;">
+                  <div class="DataTables_sort_wrapper">Status</div>
+                </th>
+                  <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Created On: activate to sort column ascending" style="width: 211px;">
+                    <div class="DataTables_sort_wrapper">Created On</div>
+                  </th>
+                  <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Updated On: activate to sort column ascending" style="width: 156px;">
+                    <div class="DataTables_sort_wrapper">Updated On</div>
+                  </th>
+                 
+                  
+                </tr>
+							</thead>
+							
+						<tbody role="alert" aria-live="polite" aria-relevant="all"   *ngFor="let list of checkListTags; let i=index ">
+              <tr class={{list.class}} >
+									<td class="">{{list.tagId}}</td>
+									<td class=" ">{{list.tagName}}</td>
+									<td class=" ">{{status[i]}}</td>
+									<td class=" ">{{list.createdOn}}</td>
+									<td class=" ">{{list.updatedOn}}</td>                 
+                       
+								</tr></tbody></table>         <div class="panel-footer clearfix">
+						<ul class="pagination pagination-xs m-top-none pull-right">
+							<li class="disabled">
+								<a href="#">Previous</a>
+							</li>
+							<li class="active">
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">5</a>
+							</li>
+							<li>
+								<a href="#">Next</a>
+							</li>
+						</ul>
+					</div></div>
+					</div>
+					<!-- /.padding-md -->
+				</div>
+					</div></div></div></div>
+        
+
+<app-footer></app-footer>

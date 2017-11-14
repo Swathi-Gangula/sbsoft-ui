@@ -1,14 +1,74 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>SbSoft</title>
+  <title>SBSoft</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+   <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/theme.css">
+	<link href="assets/css/indigo-pink.css" rel="stylesheet">  
+	<link href="assets/css/icon.css" rel="stylesheet">
+	<script src="assets/js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/custom-skin.css">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- custom -->
+	<link href="assets/css/theme.min.css" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
-</body>
+<div class="wrapper">
+        <app-root></app-root>
+    </div>
+    <div class="control-sidebar-bg"></div>
+    </div></body>
+<!-- Jquery -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/fastclick/fastclick.js"></script>
+	<script src="assets/js/app.min.js"></script>
+
+	<script src="assets/js/jquery-1.10.2.min.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+   
+	<!-- Modernizr -->
+	<script src='assets/js/modernizr.min.js'></script>
+   
+    <!-- Pace -->
+	<script src='assets/js/pace.min.js'></script>
+   
+	<!-- Popup Overlay -->
+	<script src='assets/js/jquery.popupoverlay.min.js'></script>
+   
+    <!-- Slimscroll -->
+	<script src='assets/js/jquery.slimscroll.min.js'></script>
+   
+	<!-- Cookie -->
+	<script src='assets/js/jquery.cookie.min.js'></script>
+
+	<!-- Endless -->
+	<script src="assets/js/endless/endless.js"></script>
 </html>
+
+ <script>
+        $(document).ready(function () {
+            $(".menu-icon").click(function () {
+                $(".right-expand").toggleClass("main123");
+            });
+            $('.collapse-btn').click(function () {
+                $(this).text(function (i, old) {
+                    return old == '+' ? '-' : '+';
+                });
+            });
+        });
+    </script> 

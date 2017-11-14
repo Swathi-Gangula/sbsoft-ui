@@ -1,0 +1,215 @@
+<!-- <app-header pageTitle="Check List"></app-header>
+<br>
+<div class="content-wrapper">
+  <section class="content referral-list cp-form">
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-horizontal">
+          <div class="row form-group">           
+            <div class="col-md-12 text-right">              
+              <button class="cp-btn-add add-new-rule-btn" (click)='AddTag()'>Add New Tag</button>
+            </div>
+          </div>        
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel cp-referrals-list">
+          <div class="panel-body">
+            <div class="row" >              
+              <div class="col-md-2">#</div>
+              <div class="col-md-2">Tag Name</div>              
+              <div class="col-md-2" >Status</div>
+              <div class="col-md-2" >Created On</div>
+              <div class="col-md-2" >Updated On</div> 
+              <div class="col-md-2" >Action</div>            
+            </div>
+          </div>
+        </div>
+         <div class="panel cp-referrals-list-items" *ngFor="let list of checkListTags; let i=index ">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-2">{{list.tagId}}</div>
+              <div class="col-md-2"><span *ngIf='list.tagName!= null'> {{list.tagName}} </span> </div>
+              <div class="col-md-2">{{status[i]}}</div>
+              <div class="col-md-2">{{list.createdOn}}</div>
+              <div class="col-md-2">{{list.updatedOn}}</div>
+              <div class="col-md-2">
+                <button (click)='editTag(i)' class="rule-edit cp-btn-edit">edit</button>
+                <button *ngIf='isactivate[i]==false && status[i]=="No"' class="cp-btn-deactivate" (click)='ActivateTag(i,status,isactivate[i]=!isactivate[i])'>deactivate</button>              
+                <button *ngIf='isactivate[i]==true && status[i]=="Yes"' class="cp-btn-activate" (click)='ActivateTag(i,status,isactivate[i]=!isactivate[i])'>activate</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+       
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>
+ -->
+<app-header pageTitle="Check List"></app-header>
+<div id="main-container">
+			<div class="padding-md">
+				<div class="row">
+					<div >
+<div class="panel panel-default table-responsive">
+					<div class="panel-heading">					
+								<h6>Check List Tags</h6>												
+					</div>
+					<div class="padding-md clearfix">
+						<div id="dataTable_wrapper" class="dataTables_wrapper" role="grid">
+             <a class="btn btn-success btn-sm bounceIn animation-delay5  pull-right" href="#addchecklist" role="button" data-toggle="modal" style="margin-bottom:47px !important"><i class="fa fa-plus"></i>Add CheckList</a>
+             <table class="table table-striped dataTable" id="dataTable" aria-describedby="dataTable_info">
+							<thead>
+								<tr role="row"><th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="No: activate to sort column descending" style="width: 138px;">
+                  <div class="DataTables_sort_wrapper">No </div>
+                </th>
+                <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Tag Name: activate to sort column ascending" style="width: 497px;">
+                  <div class="DataTables_sort_wrapper">Tag Name </div>
+                </th>
+                <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 152px;">
+                  <div class="DataTables_sort_wrapper">Status</div>
+                </th>
+                  <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Created On: activate to sort column ascending" style="width: 211px;">
+                    <div class="DataTables_sort_wrapper">Created On</div>
+                  </th>
+                  <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Updated On: activate to sort column ascending" style="width: 156px;">
+                    <div class="DataTables_sort_wrapper">Updated On</div>
+                  </th>
+                  <th class="ui-state-default" role="columnheader" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 226px;">
+                    <div class="DataTables_sort_wrapper">Action</div>
+                  </th>
+                  
+                </tr>
+							</thead>
+							
+						<tbody role="alert" aria-live="polite" aria-relevant="all"   *ngFor="let list of checkListTags; let i=index ">
+              <tr class={{list.class}} >
+									<td class="">{{list.tagId}}</td>
+									<td class=" ">{{list.tagName}}</td>
+									<td class=" ">{{status[i]}}</td>
+									<td class=" ">{{list.createdOn}}</td>
+									<td class=" ">{{list.updatedOn}}</td>
+                  <td class=" "><a class="btn btn-success btn-sm bounceIn animation-delay5 " href="#editchecklist" role="button" data-toggle="modal"><i class="fa fa-edit fa-lg"></i> Edit </a>
+                                <a *ngIf='isactivate[i]==false && status[i]=="No"' (click)='ActivateTag(i,status,isactivate[i]=!isactivate[i])' class="btn btn-danger  bounceIn animation-delay1" > Deactivate</a>
+                                <a *ngIf='isactivate[i]==true && status[i]=="Yes"' (click)='ActivateTag(i,status,isactivate[i]=!isactivate[i])' class="btn btn-success  bounceIn animation-delay1"> Activate</a></td>
+                       
+                </tr></tbody></table>
+                            <div class="panel-footer clearfix">
+						<ul class="pagination pagination-xs m-top-none pull-right">
+							<li class="disabled">
+								<a href="#">Previous</a>
+							</li>
+							<li class="active">
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">5</a>
+							</li>
+							<li>
+								<a href="#">Next</a>
+							</li>
+						</ul>
+					</div>         
+              
+              
+              </div>
+					</div>
+					<!-- /.padding-md -->
+				</div>
+					</div></div></div></div>
+          <div class="modal fade" id="addchecklist">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Add CheckList Tag</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label>Tag Name</label>
+					<input type="text" placeholder="Enter Tag Name" class="form-control input-sm bounceIn animation-delay2" style='width:307px'>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-sm btn-success" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<a class="btn btn-danger btn-sm" (click)="AddTag()">Save</a>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+
+
+  <div class="modal fade" id="editchecklist">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4>Edit Tag Name</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label>Tag Name</label>
+					<input type="text" placeholder="" class="form-control input-sm bounceIn animation-delay2" style='width:307px'>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-sm btn-success" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <!-- <a href="#" class="btn btn-danger btn-sm">Update</a> -->
+        <a   class="btn btn-danger btn-sm" (click)="editTag()">Update</a>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+
+<!-- <div class="custom-popup light width-100 popup_content popup_content_visible" id="lightCustomModal" data-popup-initialized="true" aria-hidden="false" role="dialog" aria-labelledby="open_92148432" style="opacity: 1; visibility: visible; display: inline-block; outline: none; transition: all 0.3s; text-align: left; position: relative; vertical-align: middle;" tabindex="-1">
+		<div class="padding-md">
+			<h4 class="m-top-none"> This is alert message.</h4>
+		</div>
+
+		<div class="text-center">
+			<a href="#" class="btn btn-success m-right-sm lightCustomModal_close">Confirm</a>
+			<a href="#" class="btn btn-danger lightCustomModal_close">Cancel</a>
+		</div>
+  </div> -->
+
+  <div class="modal fade" #modal>
+    <div class="modal-dialog" style="margin-top:140px !important;width:350px !important">
+        <div class="modal-content">
+            <form>
+                
+                <div class="modal-body">
+             <h4> {{msg}} </h4>
+                </div>
+                <div class="modal-footer">
+                  
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Ok</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+  
+<app-footer></app-footer>
+
